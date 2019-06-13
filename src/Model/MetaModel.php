@@ -4,6 +4,7 @@
     private $livro;
     private $dataInicial;
     private $dataFinal;
+    /*private $resultado;*/
 
     //Métodos mágicos
     public function __construct(){}

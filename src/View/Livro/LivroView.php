@@ -5,7 +5,7 @@
     <title>Cadastro de Livros</title>
   </head>
   <body>
-    <form action="../../Controller/LivroController.php" method="post" name="cadlivro">
+    <form action="../../Controller/LivroController.php?operation=cadastrar" method="post" name="cadlivro">
       <input type="text" name="txtTitulo" id="txtTitulo" placeholder="Título"></br>
       <input type="text" name="txtISBN" id="txtISBN" placeholder="ISBN"></br>
       <input type="text" name="txtAutor" id="txtAutor" placeholder="Autor"></br>

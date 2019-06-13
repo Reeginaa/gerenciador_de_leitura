@@ -5,7 +5,7 @@
 		<title>Cadastro de Usuários</title>
 	</head>
 	<body>
-		<form action="../../Controller/UsuarioController.php" method="post" name="cadUser">
+		<form action="../../Controller/UsuarioController.php?operation=cadastrar" method="post" name="cadUser">
 			<input type="txt" name="txtNome" id="txtNome" placeholder="Nome Completo"></br>
 			<input type="txt" name="txtSexo" id="txtSexo" placeholder="Sexo"></br>
 			<input type="date" name="dtNascimento" id="dtNascimento" placeholder="Data Nascimento"></br>
