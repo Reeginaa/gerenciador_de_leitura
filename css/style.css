@@ -1,0 +1,25 @@
+body { /*Formatação do corpo*/
+	padding-top: 50px;
+	padding-bottom: 40px;
+	background-image: url(../imagens/fundo.jpg);
+	background-size: auto;
+	margin: auto;
+}
+
+#menu ul { /*Parte da tag ul*/
+	margin: auto;
+	background-color: #000000;
+	list-style: none;
+}
+
+#menu ul li { /*Parte da tag li*/
+	display: inline;
+}
+
+#menu ul li a { /*Parte da tag a*/
+	padding: 10px 10px;
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	font-family: Verdana, Geneva, sans-serif;
+}
