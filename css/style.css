@@ -1,3 +1,4 @@
+/*FORMATAÇÃO DO CORPO*/
 body { /*Formatação do corpo*/
 	padding-top: 50px;
 	padding-bottom: 40px;
@@ -6,6 +7,7 @@ body { /*Formatação do corpo*/
 	margin: auto;
 }
 
+/*FORMATAÇÃO DO MENU DAS PÁGINAS*/
 #menu ul { /*Parte da tag ul*/
 	margin: auto;
 	background-color: #000000;
@@ -22,4 +24,68 @@ body { /*Formatação do corpo*/
 	color: white;
 	text-decoration: none;
 	font-family: Verdana, Geneva, sans-serif;
+}
+
+/*FORMATAÇÃO DOS FORM*/
+.container { /*Formatação div da área de login e cadastro*/
+	margin: auto;
+	position: absolute;
+	top: 15%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.form-cadastros { /*Formatação geral do form de cadastro*/
+	font-family: Verdana, Geneva, sans-serif;
+	max-width: 330px;
+	padding: 45px;
+	margin-left: 38%;
+	color: #DBA901;
+	overflow: hidden;
+	position: absolute;
+}
+
+.form-cadastros .form-cadastros-heading,
+.form-cadastros .checkbox { /* Formatação margem do Título e do Checkbox */
+	margin-bottom: 10px;
+	margin-left: 20%;
+}
+
+/*FORMATAÇÃO DO BOTÃO*/
+.button-cadastrar {
+	margin-right: 50%;
+	margin-left: 28%;
+	margin-top: 3%;
+	font-size: 20px;
+}
+
+/*FORMATAÇÃO DOS CAMPOS*/
+/*Campos Cadastro de Usuário*/
+#txtNome, #txtSexo, #dtNascimento,
+#txtCidade, #txtEstado, #txtEmail{
+	margin-top: 2%;
+	font-size: 20px;
+}
+
+/*Campos Cadastro de Livro*/
+#txtTitulo, #txtISBN, #txtAutor,
+#txtEditora, #txtGenero, #txtAno,
+#txtPaginas, #txtClassificacao,
+#txtSinopse{
+	margin-top: 2%;
+	font-size: 20px;
+}
+
+#classificacao{
+	color: #000000;
+}
+
+/*Campos de Cadastro de Meta*/
+
+#txtUser, #txtLivro, #diaInicio,
+#mesInicio, #anoInicio, #diaFim,
+#mesFim, #anoFim {
+	margin-top: 2%;
+	font-size: 20px;
 }
