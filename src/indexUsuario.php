@@ -17,8 +17,6 @@
 			<legend> Usuário </legend>
 			<li><a href="View/Usuario/UsuarioView.php">Cadastrar</a></li>
 			<li><a href="Controller/UsuarioController.php?operation=consultar">Consultar</a></li>
-			<li><a href="Controller/UsuarioControler.php?operation=excluir">Excluir</a></li>
-			<li><a href="Controller/UsuarioControler.php?operation=alterar">Alterar</a></li>
-		</fieldset>
+		</fieldset><!--Procurar estilização pra essa área-->
 	</body>
 </html>

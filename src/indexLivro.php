@@ -17,7 +17,6 @@
 			<legend> Livro </legend>
 			<li><a href="View/Livro/LivroView.php">Cadastrar</a></li>
 			<li><a href="Controller/LivroController.php?operation=consultar">Consultar</a></li>
-			<li><a href="Controller/LivroControler.php?operation=excluir">Excluir</a></li>
-		</fieldset>
+		</fieldset><!--Procurar estilização para esta área-->
 	</body>
 </html>
