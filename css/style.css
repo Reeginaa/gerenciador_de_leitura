@@ -1,10 +1,11 @@
 /*FORMATAÇÃO DO CORPO*/
-body { /*Formatação do corpo*/
+body {
 	padding-top: 50px;
 	padding-bottom: 40px;
 	background-image: url(../imagens/fundo.jpg);
 	background-size: auto;
 	margin: auto;
+	font-family: arial;
 }
 
 /*FORMATAÇÃO DO MENU DAS PÁGINAS*/
@@ -26,66 +27,131 @@ body { /*Formatação do corpo*/
 	font-family: Verdana, Geneva, sans-serif;
 }
 
+/*FORMATAÇÃO DAS TABELAS*/
+table {
+	margin-top: 25px;
+  border-collapse: collapse;
+  width: 50em;
+  border: 1px solid #666;
+}
+thead {
+  background: #ccc url(https://www.devfuria.com.br/html-css/tabelas/bar.gif) repeat-x left center;
+  border-top: 1px solid #a5a5a5;
+  border-bottom: 1px solid #a5a5a5;
+}
+tr:hover {
+  background-color:#3d80df;
+  color: #fff;
+}
+thead tr:hover {
+  background-color: transparent;
+  color: inherit;
+}
+tr:nth-child(even) {
+    background-color: #edf5ff;
+}
+th {
+  font-weight: normal;
+  text-align: left;
+}
+th, td {
+  padding: 0.1em 1em;
+}
+tbody{
+	font: 75%/1.6 "Myriad Pro", Frutiger, "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
+	background-color: #a5a5a5;
+}
+
 /*FORMATAÇÃO DOS FORM*/
-.container { /*Formatação div da área de login e cadastro*/
-	margin: auto;
-	position: absolute;
-	top: 15%;
-	left: 0;
-	bottom: 0;
-	right: 0;
+input{
+	display: block;
+	height: 30px;
+	width: 400px;
+	margin: 10px;
+	border-radius: 30px;
+	border: 2px solid black;
+	font-size: 16pt;
+	padding: 1px 10px;
+	background-color: rgba(255, 255, 255, 0.01);
+	color: #FFFFFF;
+	outline: none;
 }
 
-.form-cadastros { /*Formatação geral do form de cadastro*/
-	font-family: Verdana, Geneva, sans-serif;
-	max-width: 330px;
-	padding: 45px;
-	margin-left: 38%;
-	color: #DBA901;
-	overflow: hidden;
-	position: absolute;
+select{
+	display: block;
+	height: 35px;
+	width: 400px;
+	margin: 10px;
+	border-radius: 30px;
+	border: 2px solid black;
+	font-size: 16pt;
+	padding: 1px 10px;
+	background-color: rgba(255, 255, 255, 0.01);
+	color: #FFFFFF;
+	outline: none;
 }
 
-.form-cadastros .form-cadastros-heading,
-.form-cadastros .checkbox { /* Formatação margem do Título e do Checkbox */
-	margin-bottom: 10px;
-	margin-left: 20%;
+div#corpo-form{
+	width: 420px;
+	margin: 100px auto 0px auto;
 }
 
-/*FORMATAÇÃO DO BOTÃO*/
-.button-cadastrar {
-	margin-right: 50%;
-	margin-left: 28%;
-	margin-top: 3%;
-	font-size: 20px;
+div#corpo-form-livro{
+	width: 420px;
+	margin: 40px auto 0px auto;
 }
 
-/*FORMATAÇÃO DOS CAMPOS*/
-/*Campos Cadastro de Usuário*/
-#txtNome, #txtSexo, #dtNascimento,
-#txtCidade, #txtEstado, #txtEmail{
-	margin-top: 2%;
-	font-size: 20px;
+div#corpo-form h1{
+	text-align: center;
+	padding: 2px;
+	color: #F7D358;
 }
 
-/*Campos Cadastro de Livro*/
-#txtTitulo, #txtISBN, #txtAutor,
-#txtEditora, #txtGenero, #txtAno,
-#txtPaginas, #txtClassificacao,
-#txtSinopse{
-	margin-top: 2%;
-	font-size: 20px;
+div#corpo-form-livro h1{
+	text-align: center;
+	padding: 2px;
+	color: #F7D358;
 }
 
-#classificacao{
-	color: #000000;
+p{
+	display: block;
+	height: 30px;
+	width: 400px;
+	margin: 0px;
+	font-size: 16pt;
+	padding: 1px 10px;
+	color: #FFFFFF;
+	outline: none;
 }
 
-/*Campos de Cadastro de Meta*/
+input[type=submit]{
+	background-color: #088A08;
+	border: none;
+	cursor: pointer;
+}
 
-#txtUser, #txtLivro, #diaInicio,
-#mesInicio, #anoInicio, #diaFim,
-#mesFim, #anoFim {
-	margin-top: 2%;
-	font-size: 20px;
+/*Demais Formatações*/
+a{
+	color: black;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+::-webkit-input-placeholder{/*Webkit browsers*/
+	color: #FFFFFF;
+}
+
+:-moz-placeholder{/*Mozilla Firefox 4 to 18*/
+	color: #FFFFFF;
+}
+
+::-moz-placeholder{/*Mozilla Firefox 19+*/
+	color: #FFFFFF;
+}
+
+:-ms-input-placeholder{/*Internet Explore 10+*/
+	color: #FFFFFF;
 }
