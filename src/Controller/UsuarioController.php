@@ -4,43 +4,76 @@
 	include '../Include/UsuarioValidate.php';
 	include '../Dao/UsuarioDAO.php';
 
-	if ((!empty($_POST['txtNome'])) && (!empty($_POST['txtSexo'])) && (!empty($_POST['dtNascimento'])) &&
-	    (!empty($_POST['txtCidade'])) && (!empty($_POST['txtEstado'])) && (!empty($_POST['txtEmail']))) {
+	if (isset($_GET['operation'])) {
+		switch ($_GET['operation']) {
+			case 'cadastrar':
+				if ((!empty($_POST['txtNome'])) && (!empty($_POST['txtSexo'])) && (!empty($_POST['dtNascimento'])) &&
+						(!empty($_POST['txtCidade'])) && (!empty($_POST['txtEstado'])) && (!empty($_POST['txtEmail']))) {
 
-				$erros = array();
+					$erros = array();
 
-				if(!UsuarioValidate::testarEmail($_POST['txtEmail'])) {
-					echo "E-mail inválido";
+					if(!UsuarioValidate::testarEmail($_POST['txtEmail'])) {
+						echo "E-mail inválido";
+					}
+
+					if (count($erros) == 0) {
+						$usuario = new UsuarioModel();
+
+						$usuario->nomeCompleto = $_POST['txtNome'];
+						$usuario->sexo = $_POST['txtSexo'];
+						$usuario->dataNascimento = $_POST['dtNascimento'];
+						$usuario->cidade = $_POST['txtCidade'];
+						$usuario->estado = $_POST['txtEstado'];
+						$usuario->email = $_POST['txtEmail'];
+
+						$usuarioDao = new UsuarioDAO();
+						$usuarioDao->insertUsuario($usuario);
+
+						$_SESSION['nomeCompleto'] = $usuario->nomeCompleto;
+						$_SESSION['sexo'] = $usuario->sexo;
+						$_SESSION['dataNascimento'] = $usuario->dataNascimento;
+						$_SESSION['cidade'] = $usuario->cidade;
+						$_SESSION['estado'] = $usuario->estado;
+						$_SESSION['email'] = $usuario->email;
+						header("location:../View/Usuario/UsuarioViewResult.php?");
+					}	else {
+						$err = serialize($erros);
+						$_SESSION['erros'] = $err;
+						header("location:../View/Usuario/UsuarioViewError.php");
+					}
+				} else {
+					echo "<script language='javascript' type='text/javascript'>
+            alert('Informe todos os campos!');
+            window.location.href='../View/Usuario/UsuarioView.php';
+        	</script>";
 				}
+				break;
 
-				if (count($erros) == 0) {
-					$usuario = new UsuarioModel();
+			case 'consultar':
+				$usuarioDao = new UsuarioDAO();
+				$array = array();
+				$array = $usuarioDao->searchUsuario();
 
-					$usuario->nomeCompleto = $_POST['txtNome'];
-					$usuario->sexo = $_POST['txtSexo'];
-					$usuario->dataNascimento = $_POST['dtNascimento'];
-					$usuario->cidade = $_POST['txtCidade'];
-					$usuario->estado = $_POST['txtEstado'];
-					$usuario->email = $_POST['txtEmail'];
+				$_SESSION['usuario'] = serialize($array);
+				header("location:../View/Usuario/UsuarioViewConsulta.php");
+			  break;
 
+			case 'excluir':
+				if (isset($_REQUEST['id'])) {
 					$usuarioDao = new UsuarioDAO();
-					$usuarioDao->insertUsuario($usuario);
-
-					$_SESSION['nomeCompleto'] = $usuario->nomeCompleto;
-					$_SESSION['sexo'] = $usuario->sexo;
-					$_SESSION['dataNascimento'] = $usuario->dataNascimento;
-					$_SESSION['cidade'] = $usuario->cidade;
-					$_SESSION['estado'] = $usuario->estado;
-					$_SESSION['email'] = $usuario->email;
-					header("location:../View/Usuario/UsuarioViewResult.php?");
+					$usuarioDao->deleteUsuario($_REQUEST['id']);
+					header('location:../Controller/UsuarioController.php?operation=consultar');
+					echo "<script language='javascript' type='text/javascript'>
+            alert('Usuário excluido com sucesso');
+            window.location.href='../Controller/UsuarioController/php?operation=consultar';
+        	</script>";
+				} else {
+					echo "<script language='javascript' type='text/javascript'>
+            alert('Usuário informado não existe');
+            window.location.href='../View/Usuario/UsuarioView.php';
+        	</script>";
 				}
-				else {
-					$err = serialize($erros);
-					$_SESSION['erros'] = $err;
-					header("location:../View/Usuario/UsuarioViewError.php");
-				}
-			}
-			else {
-				echo "Informe todos os campos!";
-			}
+				break;
+		}
+	}
 ?>
