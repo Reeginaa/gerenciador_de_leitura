@@ -13,5 +13,16 @@
 				<li><a href="src/indexMeta.php">Manutenção de Meta</a></li>
 			</ul>
 		</div>
+		<div>
+			<fieldset id="home">
+				<h1><b>GERENCIADOR DE LEITURAS</b></h1>
+			</fieldset>
+		</div>
+
+		<div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
+    </div>
 	</body>
 </html>
