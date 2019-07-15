@@ -13,10 +13,17 @@
 				<li><a href="indexLivro.php">Manutenção de Livro</a></li>
 			</ul>
 		</div>
+
 		<fieldset>
-			<legend> Usuário </legend>
+			<legend> <b><ins>Usuário</ins></b> </legend>
 			<li><a href="View/Usuario/UsuarioView.php">Cadastrar</a></li>
 			<li><a href="Controller/UsuarioController.php?operation=consultar">Consultar</a></li>
-		</fieldset><!--Procurar estilização pra essa área-->
+		</fieldset>
+
+		<div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
+    </div>
 	</body>
 </html>

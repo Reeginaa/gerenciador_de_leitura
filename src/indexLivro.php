@@ -13,10 +13,17 @@
 				<li><a href="indexMeta.php">Manutenção de Meta</a></li>
 			</ul>
 		</div>
+
 		<fieldset>
-			<legend> Livro </legend>
+			<legend> <b><ins>Livro</ins></b> </legend>
 			<li><a href="View/Livro/LivroView.php">Cadastrar</a></li>
 			<li><a href="Controller/LivroController.php?operation=consultar">Consultar</a></li>
-		</fieldset><!--Procurar estilização para esta área-->
+		</fieldset>
+
+		<div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
+    </div>
 	</body>
 </html>
