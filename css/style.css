@@ -5,7 +5,7 @@ body {
 	background-image: url(../imagens/fundo.jpg);
 	background-size: auto;
 	margin: auto;
-	font-family: arial;
+	font-family: arial;/*Tipo de fonte de qualquer texto que estiver no corpo*/
 }
 
 /*FORMATAÇÃO DO MENU DAS PÁGINAS*/
@@ -32,7 +32,7 @@ table {
 	margin-top: 25px;
   border-collapse: collapse;
   width: 50em;
-  border: 1px solid #666;
+  border: 2px solid #666;
 }
 thead {
   background: #ccc url(https://www.devfuria.com.br/html-css/tabelas/bar.gif) repeat-x left center;
@@ -40,7 +40,7 @@ thead {
   border-bottom: 1px solid #a5a5a5;
 }
 tr:hover {
-  background-color:#3d80df;
+  background-color:#424242;
   color: #fff;
 }
 thead tr:hover {
@@ -56,28 +56,65 @@ th {
 }
 th, td {
   padding: 0.1em 1em;
+	font-size: 10pt;
+
 }
 tbody{
-	font: 75%/1.6 "Myriad Pro", Frutiger, "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
+	font: 75%/1.6 arial;
 	background-color: #a5a5a5;
 }
 
-/*FORMATAÇÃO DOS FORM*/
-input{
-	display: block;
-	height: 30px;
-	width: 400px;
-	margin: 10px;
+/*FORMATAÇÃO DOS INDEX*/
+fieldset{
 	border-radius: 30px;
-	border: 2px solid black;
+	border: 3px solid black;
 	font-size: 16pt;
-	padding: 1px 10px;
-	background-color: rgba(255, 255, 255, 0.01);
-	color: #FFFFFF;
-	outline: none;
+	margin: 150px auto 0px auto;/*Para centralizar*/
+	width: 420px;
+	background-color: rgba(0,0,0, 0.3);/*Deixa o fundo do input transparente, pode mudar a opacidade aumentando o 0.01*/
+	color: white;
+	padding: 10px 20px;
 }
 
-select{
+fieldset#home{
+	border-radius: 30px;
+	border: 4px solid black;
+	font-size: 16pt;
+	margin: 200px auto 0px auto;/*Para centralizar*/
+	width: 800px;
+	background-color: rgba(0,0,0, 0.5);/*Deixa o fundo do input transparente, pode mudar a opacidade aumentando o 0.01*/
+	color: white;
+	padding: 30px 80px;
+}
+
+/*FORMATAÇÃO DOS FORM*/
+*{
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+}
+
+input{
+	display: block;/*Para ficar um embaixo do outro sem precisar do </br>*/
+	height: 30px;/*Altura dos input*/
+	width: 400px;/*Largura dos input*/
+	margin: 10px;/*Margem entre um input e outro*/
+	border-radius: 30px;/*Borda arredondada*/
+	border: 2px solid black;/*Contorno ao redor, borda sólida*/
+	font-size: 16pt;/*Tamanho da fonte*/
+	padding: 1px 10px;/*Margem do texto da borda do input*/
+	background-color: rgba(255, 255, 255, 0.01);/*Deixa o fundo do input transparente, pode mudar a opacidade aumentando o 0.01*/
+	color: #FFFFFF;/*Altera a cor das letras, para alterar do placeholder tem um código a mais que vai estar mais para baixo*/
+	outline: none;/*Tira o contorno azul de quando clica no input*/
+}
+
+input[type=submit]{/*Formatação do botão do tipo submit*/
+	background-color: #088A08;/*Cor do botão*/
+	border: none;/*Tira a borda do botão*/
+	cursor: pointer;/*Quando passar o mouse em cima do botão eme fica na forma de uma mãozinha*/
+}
+
+select{/*Formatação do select*/
 	display: block;
 	height: 35px;
 	width: 400px;
@@ -87,32 +124,37 @@ select{
 	font-size: 16pt;
 	padding: 1px 10px;
 	background-color: rgba(255, 255, 255, 0.01);
-	color: #FFFFFF;
+	color: white;
 	outline: none;
 }
 
+option{
+	color: black;
+}
+
 div#corpo-form{
-	width: 420px;
-	margin: 100px auto 0px auto;
+	width: 420px;/*Largura da  DIV*/
+	margin: 100px auto 0px auto;/*Para centralizar*/
 }
 
 div#corpo-form-livro{
-	width: 420px;
-	margin: 40px auto 0px auto;
+	width: 420px;/*Largura da DIV*/
+	margin: 40px auto 0px auto;/*Para centraizar*/
 }
 
 div#corpo-form h1{
-	text-align: center;
+	text-align: center;/*Centraliza o texto do H1*/
 	padding: 2px;
-	color: #F7D358;
+	color: #FFFFFF;
 }
 
 div#corpo-form-livro h1{
-	text-align: center;
+	text-align: center;/*Centraliza o texto do H1*/
 	padding: 2px;
-	color: #F7D358;
+	color: #FFFFFF;
 }
 
+/*FORMATAÇÃO DO PARÁGRAFO DE TEXTO*/
 p{
 	display: block;
 	height: 30px;
@@ -124,22 +166,68 @@ p{
 	outline: none;
 }
 
-input[type=submit]{
-	background-color: #088A08;
-	border: none;
-	cursor: pointer;
-}
-
-/*Demais Formatações*/
+/*FORMATAÇÃO DO LINK*/
 a{
-	color: black;
-	text-decoration: none;
+	color: white;/*O texto recebe a cor branca*/
+	text-decoration: none;/*Tira a underline em baixo do link*/
 }
 
 a:hover{
-	text-decoration: underline;
+	text-decoration: underline;/*Quando passa o mouse em cima aparece a underline*/
 }
 
+/*FORMATAÇÃO DOS TÍTULO*/
+div#titulo h1{
+	text-align: center;/*Centraliza o texto do H1*/
+	padding: 2px;
+	color: #FFFFFF;
+	margin: 60px auto 0px auto;/*Para centraizar*/
+}
+
+/*FORMATAÇÃO BARRA DE CARREGAMENTO*/
+.percent-count{
+	width: 450px;
+	height: 50px;
+	margin: 100px auto;
+	font-size: 50px;
+	text-align: center;
+	color: #fff;
+}
+
+.progress-bar{
+	width: 506px;
+	height: 26px;
+	background-color: #bbb;
+	border-radius: 13px;
+	padding: 3px;
+	margin: 50px auto;
+}
+
+.progress{
+	width: 25px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: #04B404;
+}
+
+/*FORMATAÇÃO RODAPE*/
+#rodape > div {
+	position: fixed;
+	margin: center;
+	width: 99%;
+	overflow: hidden;
+	color: #fff;
+	background-color: rgba(0,0,0, 0.5);
+	bottom: 0;
+	font-family: calibri;
+	font-size: 18px;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	border: 3px solid black;
+}
+
+/*PARA ALTERAR A COR DO PLACEHOLDER*/
 ::-webkit-input-placeholder{/*Webkit browsers*/
 	color: #FFFFFF;
 }
