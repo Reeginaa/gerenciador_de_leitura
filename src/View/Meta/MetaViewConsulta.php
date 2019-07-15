@@ -27,34 +27,34 @@
         echo '<table>';/*Tabela para apresentar os dados cadastrados*/
           echo '<thead>';
             echo '<tr>';
-              echo '<th>Leitor | </th>';
-              echo '<th>Livro | </th>';
-              echo '<th>Data Início | </th>';
-              echo '<th>Data Final | </th>';
-              echo '<th>Quantidade de Páginas | </th>';
-              echo '<th>...</th>';
+              echo '<th>Leitor</th>';
+              echo '<th>Livro</th>';
+              echo '<th>Data Início</th>';
+              echo '<th>Data Final</th>';
+              echo '<th>Quantidade de Páginas</th>';
+              echo '<th></th>';
             echo '</tr>';
           echo '</thead>';
 
-        foreach ($meta as $u) {
+        foreach ($meta as $m) {
           echo '<tbody>';
             echo '<tr>';
               echo '<td>';
-                echo "$u->user";
+                echo "$m->user";
               echo '</td>';
               echo '<td>';
-                echo "$u->livro";
+                echo "$m->livro";
               echo '</td>';
               echo '<td>';
-                echo "$u->dataInicio";
+                echo "$m->dataInicio";
               echo '</td>';
               echo '<td>';
-                echo "$u->dataFinal";
+                echo "$m->dataFinal";
               echo '</td>';
               echo '<td>';
-                echo "$u->dias";
+                echo "$m->pgResultado";
               echo '</td>';
-              echo "<td><a href='../../Controller/LivroController.php?operation=excluir&id=$u->id'>Deletar</a></td>";
+              echo "<td><a href='../../Controller/MetaController.php?operation=excluir&id=$m->id'>Deletar</a></td>";
             echo '<tr>';
           echo '</tbody>';
         }
@@ -64,5 +64,11 @@
         unset($_SESSION['meta']);
       }
     ?>
+
+    <div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
+    </div>
   </body>
 </html>

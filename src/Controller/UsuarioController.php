@@ -8,7 +8,7 @@
 		switch ($_GET['operation']) {
 			case 'cadastrar':
 				if ((!empty($_POST['txtNome'])) && (!empty($_POST['txtSexo'])) && (!empty($_POST['dtNascimento'])) &&
-						(!empty($_POST['txtCidade'])) && (!empty($_POST['txtEstado'])) && (!empty($_POST['txtEmail']))) {
+					 (!empty($_POST['txtEmail']))) {
 
 					$erros = array();
 
@@ -22,8 +22,6 @@
 						$usuario->nomeCompleto = $_POST['txtNome'];
 						$usuario->sexo = $_POST['txtSexo'];
 						$usuario->dataNascimento = $_POST['dtNascimento'];
-						$usuario->cidade = $_POST['txtCidade'];
-						$usuario->estado = $_POST['txtEstado'];
 						$usuario->email = $_POST['txtEmail'];
 
 						$usuarioDao = new UsuarioDAO();
@@ -32,8 +30,6 @@
 						$_SESSION['nomeCompleto'] = $usuario->nomeCompleto;
 						$_SESSION['sexo'] = $usuario->sexo;
 						$_SESSION['dataNascimento'] = $usuario->dataNascimento;
-						$_SESSION['cidade'] = $usuario->cidade;
-						$_SESSION['estado'] = $usuario->estado;
 						$_SESSION['email'] = $usuario->email;
 						header("location:../View/Usuario/UsuarioViewResult.php?");
 					}	else {

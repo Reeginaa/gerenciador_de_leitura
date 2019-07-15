@@ -1,5 +1,5 @@
 <?php
-  include '../Persistence/ConnectionDB.php';
+  include_once '../Persistence/ConnectionDB.php';
 
   class LivroDAO {
     private $connection = null;
@@ -10,7 +10,7 @@
 
     public function insertLivro ($livro) {
       try{
-        $status = $this->connection->prepare("Insert into livro(id, titulo, ISBN, autor, editora, genero, ano, qtdPaginas, classificacao, sinopse) values (null, ?,?,?,?,?,?,?,?,?)");
+        $status = $this->connection->prepare("INSERT INTO livro(id, titulo, ISBN, autor, editora, genero, ano, qtdPaginas, classificacao, sinopse) VALUES (null, ?,?,?,?,?,?,?,?,?)");
 
         $status->bindValue(1, $livro->titulo);
         $status->bindValue(2, $livro->ISBN);
@@ -29,6 +29,51 @@
       } catch (PDOException $e) {
         echo "Ocorreram erros ao inserir novo livro.";
       }
+    }
+
+    public function searchLivro(){
+      try {
+        $status = $this->connection->query("SELECT * FROM livro");
+
+        $array = array();
+        $array = $status->fetchAll(PDO::FETCH_CLASS, 'LivroModel');
+
+        $this->connection = null;
+
+        return $array;
+      } catch (PDOException $e) {
+        echo 'Ocorreram erros ao buscar livros' . $e;
+      }
+    }
+
+    public function searchLivroId($id){
+      try {
+        $status = $this->connection->query("SELECT * FROM livro WHERE id = ".$id);
+
+        $array = array();
+        $array = $status->fetch(PDO::FETCH_OBJ);
+
+        $this->connection = null;
+
+        return $array;
+        $this->connection = null;
+      } catch (PDOException $e) {
+        echo 'Ocorreram erros ao buscar livros' . $e;
+      }
+    }
+
+    public function deleteLivro($id) {
+      try {
+        $status = $this->connection->prepare("DELETE FROM livro WHERE id = ?");
+
+        $status->bindValue(1, $id);
+        $status->execute();
+
+        $this->connection = null;
+      } catch (PDOException $e) {
+        echo "Ocorreram erros ao deletar o livro! <br>$e";
+      }
+
     }
   }
 ?>

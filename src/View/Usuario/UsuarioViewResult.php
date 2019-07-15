@@ -17,7 +17,9 @@
 				<li><a href="../../indexLivro.php">Manutenção de Livro</a></li>
 			</ul>
 		</div>
-    <h1>RESULTADO</h1><p>
+    <div id="titulo">
+      <h1><b><ins>RESULTADO</ins></b></h1>
+    </div>
       <?php
         echo '<table>';/*Tabela para apresentar os dados cadastrados*/
           echo '<thead>';
@@ -25,8 +27,6 @@
               echo '<th>Nome Completo</th>';
               echo '<th>Sexo</th>';
               echo '<th>Data de Nascimento</th>';
-              echo '<th>Cidade</th>';
-              echo '<th>Estado</th>';
               echo '<th>E-mail</th>';
             echo '</tr>';
           echo '</thead>';
@@ -35,8 +35,6 @@
               echo '<td>'.$_SESSION['nomeCompleto'].'</td>';
               echo '<td>'.$_SESSION['sexo'] .'</td>';
               echo '<td>'.$_SESSION['dataNascimento'] .'</td>';
-              echo '<td>'.$_SESSION['cidade'] .'</td>';
-              echo '<td>'.$_SESSION['estado'] .'</td>';
               echo '<td>'.$_SESSION['email'].'</td>';
             echo '</tr>';
           echo '</tbody>';
@@ -45,9 +43,13 @@
         unset($_SESSION['nomeCompleto']);
         unset($_SESSION['sexo']);
         unset($_SESSION['dataNascimento']);
-        unset($_SESSION['cidade']);
-        unset($_SESSION['estado']);
         unset($_SESSION['email']);
       ?>
+
+      <div id="rodape">
+          <div>
+  			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+      	</div>
+      </div>
   </body>
 </html>

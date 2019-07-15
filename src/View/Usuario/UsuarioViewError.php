@@ -14,16 +14,26 @@
 				<li><a href="../../indexLivro.php">Manutenção de Livro</a></li>
 			</ul>
 		</div>
-    <h1>ERROS!!!</h1>
-    <?php
-      if (isset($_GET['erros'])) {
-        $erros = array();
-        $erros = unserialize($_GET['erros']);
+    <div id="titulo">
+      <h1><b><ins>ERROS!</ins></b></h1>
+    </div>
+    <fieldset>
+      <?php
+        if (isset($_GET['erros'])) {
+          $erros = array();
+          $erros = unserialize($_GET['erros']);
 
-        foreach ($erros as $e) {
-          echo '<br/>' . $e;
+          foreach ($erros as $e) {
+            echo '<br/>' . $e;
+          }
         }
-      }
-    ?>
+      ?>
+    </fieldset>
+
+    <div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
+    </div>
   </body>
 </html>

@@ -18,7 +18,9 @@
 				<li><a href="../../indexLivro.php">Manutenção de Livro</a></li>
 			</ul>
 		</div>
-    <h1>RESULTADO</h1><p>
+    <div id="titulo">
+      <h1><b><ins>RESULTADO</ins></b></h1>
+    </div>
     <?php
       echo '<table>';/*Tabela para exibir resultado do cadastro*/
         echo '<thead>';
@@ -36,7 +38,7 @@
             echo '<td>'.$_SESSION['livro'] .'</td>';
             echo '<td>'.$_SESSION['dataInicio'] .'</td>';
             echo '<td>'.$_SESSION['dataFinal'] .'</td>';
-            echo '<td>'.$_SESSION['pgResultadp'] .'</td>';
+            echo '<td>'.$_SESSION['pgResultado'] .'</td>';
           echo '</tr>';
         echo '</tbody>';
       echo '</table>';
@@ -45,7 +47,13 @@
       unset($_SESSION['livro']);
       unset($_SESSION['dataInicio']);
       unset($_SESSION['dataFinal']);
-      unset($_SESSION['dias']);
+      unset($_SESSION['pgResultado']);
     ?>
+
+    <div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
+    </div>
   </body>
 </html>

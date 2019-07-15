@@ -35,22 +35,22 @@
             echo '</tr>';
           echo '</thead>';
 
-        foreach ($livro as $u) {
+        foreach ($livro as $l) {
           echo '<tbody>';
             echo '<tr>';
               echo '<td>';
-                echo "$u->titulo";
+                echo "$l->titulo";
               echo '</td>';
               echo '<td>';
-                echo "$u->autor";
+                echo "$l->autor";
               echo '</td>';
               echo '<td>';
-                echo "$u->qtdPaginas";
+                echo "$l->qtdPaginas";
               echo '</td>';
               echo '<td>';
-                echo "$u->classificacao";
+                echo "$l->classificacao";
               echo '</td>';
-              echo "<td><a href='../../Controller/LivroController.php?operation=excluir&id=$u->id'>Deletar</a></td>";
+              echo "<td><a href='../../Controller/LivroController.php?operation=excluir&id=$l->id'>Deletar</a></td>";
             echo '<tr>';
           echo '</tbody>';
         }
@@ -60,5 +60,11 @@
         unset($_SESSION['livro']);
       }
     ?>
+
+    <div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
+    </div>
   </body>
 </html>

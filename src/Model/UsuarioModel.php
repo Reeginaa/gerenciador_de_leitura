@@ -4,8 +4,6 @@
 		private $nomeCompleto;
 		private $sexo;
 		private $dataNascimento;
-		private $cidade;
-		private $estado;
 		private $email;
 
 		//Métodos mágicos

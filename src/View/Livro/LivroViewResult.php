@@ -17,7 +17,9 @@
 				<li><a href="../../indexLivro.php">Manutenção de Livro</a></li>
 			</ul>
 		</div>
-    <h1>RESULTADOS!!!</h1>
+    <div id="titulo">
+      <h1><b><ins>RESULTADOS</ins></b></h1>
+    </div>
     <?php
       echo '<table>';/*Tabela para apresentar os dados cadastrados*/
         echo '<thead>';
@@ -58,5 +60,11 @@
       unset($_SESSION['classificacao']);
       unset($_SESSION['sinopse']);
     ?>
+
+    <div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
+    </div>
   </body>
 </html>

@@ -1,10 +1,12 @@
 <?php
 
   class MetaModel {
+    private $user;
     private $livro;
-    private $dataInicial;
+    private $dataInicio;
     private $dataFinal;
-    /*private $resultado;*/
+    private $dias;
+    private $pgResultado;
 
     //Métodos mágicos
     public function __construct(){}

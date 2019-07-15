@@ -18,6 +18,7 @@
 				<li><a href="../../indexLivro.php">Manutenção de Livro</a></li>
 			</ul>
 		</div>
+
     <?php
       if (isset($_SESSION['usuario'])) {
         include_once '../../Model/UsuarioModel.php';
@@ -51,5 +52,11 @@
         unset($_SESSION['usuario']);
       }
     ?>
+
+    <div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
+    </div>
   </body>
 </html>

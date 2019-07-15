@@ -6,8 +6,9 @@
   if (isset($_GET['operation'])) {
     switch ($_GET['operation']) {
       case 'cadastrar':
+
         if ((!empty($_POST['txtUser'])) && (!empty($_POST['txtLivro'])) &&
-      (!empty($_POST['dataInicio'])) && (!empty($_POST['dataFinal'])) && (!empty($_POST['dias']))) {
+            (!empty($_POST['dataInicio'])) && (!empty($_POST['dataFinal'])) && (!empty($_POST['dias'])) ) {
 
           $erros = array();
 
@@ -28,7 +29,8 @@
             $_SESSION['dataInicio'] = $meta->dataInicio;
             $_SESSION['dataFinal'] = $meta->dataFinal;
             $_SESSION['dias'] = $meta->dias;
-            header("location:../View/Meta/MetaViewResult.php");
+
+            header("location:../carregando.php");
           } else {
             $err = serialize($erros);
             $_SESSION['erros'] = $err;

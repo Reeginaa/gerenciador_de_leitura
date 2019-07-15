@@ -18,8 +18,10 @@
 				<li><a href="../../indexMeta.php">Manutenção de Meta</a></li>
 			</ul>
 		</div>
+
+
     <div id="corpo-form">
-      <h1>Cadastro de Meta</h1>
+      <h1><b><ins>Cadastro de Meta</ins></b></h1>
       <form action="../../Controller/MetaController.php?operation=cadastrar" method="post">
         <select name="txtUser" id="txtUser">
           <option>Selecione um Usuário</option>
@@ -29,7 +31,7 @@
             $usuarioDao = new UsuarioDAO();
             $usuario = $usuarioDao->searchUsuario();
             foreach ($usuario as $u) {
-              echo "<option value='$u->nomeCompleto'>$u->nomeCompleto</option>";
+              echo "<option value='$u->id'>$u->nomeCompleto</option>";
             }
           ?>
         </select></br>
@@ -41,7 +43,7 @@
             $livroDao = new LivroDAO();
             $livro = $livroDao->searchLivro();
             foreach ($livro as $l) {
-              echo "<option value='$l->Título'>$l->titulo</option>";
+              echo "<option value='$l->id'>$l->titulo</option>";
             }
           ?>
         </select></br>
@@ -50,8 +52,14 @@
         <p>Data Final</p>
         <input type="date" name="dataFinal" id="dataFinal" placeholder="Data Final"></br>
         <input type="hidden" name="dias" id="dias" placeholder="Dias">
-        <input type="submit" name="btCalcular" id="btCalcular" class="button-cadastrar" value="Calcular"><!--Para Realizar o cálculo das páginas-->
+        <input type="submit" name="btCalcular" id="btCalcular" value="Calcular"><!--Para Realizar o cálculo das páginas-->
       </form>
+    </div>
+
+    <div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
     </div>
 
         <script>/*Realizar Cálculo de diferença entre datas*/
@@ -64,6 +72,7 @@
             var dia = 1000*60*60*24; // milésimos de segundo correspondente a um dia
             var total = Math.round(diferenca/dia); //valor total de dias arredondado
             document.getElementById("dias").value = total;
+            console.log(total);
           });
         </script>
 

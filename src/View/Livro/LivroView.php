@@ -14,8 +14,9 @@
 				<li><a href="../../indexMeta.php">Manutenção de Meta</a></li>
 			</ul>
 		</div>
+
     <div id="corpo-form-livro">
-      <h1>Cadastro de Livro</h1>
+      <h1><b><ins>Cadastro de Livro</ins></b></h1>
       <form action="../../Controller/LivroController.php?operation=cadastrar" method="post">
         <input type="text" name="txtTitulo" id="txtTitulo" placeholder="Título">
         <input type="text" name="txtISBN" id="txtISBN" placeholder="ISBN">
@@ -37,5 +38,12 @@
         <input type="submit" name="btCadastrar" id="btCadastrar" class="button-cadastrar" value="Cadastrar">
       </form>
     </div>
+
+    <div id="rodape">
+        <div>
+			Maria Regina Cerbaro &copy 2019 Todos os direitos reservados
+    	</div>
+    </div>
+
   </body>
 </html>
